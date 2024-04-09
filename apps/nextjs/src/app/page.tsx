@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { redirect } from "next/navigation";
 
 import { api } from "~/trpc/server";
 import { AuthShowcase } from "./_components/auth-showcase";
@@ -11,6 +12,7 @@ import {
 export const runtime = "edge";
 
 export default async function HomePage() {
+  redirect("p");
   // You can await this here if you don't want to show Suspense fallback below
   const posts = api.post.all();
 
